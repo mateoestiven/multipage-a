@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Página de Contactos</title>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-6">
+        <h1 class="text-2xl font-bold text-center mb-6">Página de Contactos</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Tarjeta de Contacto -->
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="https://img.a.transfermarkt.technology/portrait/big/28003-1710080339.jpg?lm=1" alt="Foto" class="rounded-full border-2 border-gray-300 mx-auto mb-4">
+                <h2 class="text-lg font-semibold text-center">Messiento Feliz</h2>
+                <p class="text-gray-600 text-center">Centro Delantero</p>
+                <p class="text-gray-700 text-center">Email: correo@ejemplo.com</p>
+                <p class="text-gray-700 text-center">Teléfono: (123) 456-7890</p>
+            </div>
+            <!-- Repite esta tarjeta para más contactos -->
+            <div class="bg-blue-500 rounded-lg shadow-lg p-4">
+                <img src="https://intn24.lalr.co/cms/2024/04/10201837/El-futbolista-portugues-Cristiano-Ronaldo-EFE.jpg?r=1_1" alt="Foto" class="rounded-full border-2 border-gray-300 mx-auto mb-4">
+                <h2 class="text-lg font-semibold text-center">Cerreciente</h2>
+                <p class="text-gray-600 text-center">Delantero</p>
+                <p class="text-gray-700 text-center">Email: correo@ejemplo.com</p>
+                <p class="text-gray-700 text-center">Teléfono: (123) 456-7890</p>
+            </div>
+            <!-- Agrega más contactos aquí -->
+            <div class="bg-yellow-300 rounded-lg shadow-lg p-4">
+                <img src="https://b.fssta.com/uploads/application/soccer/headshots/713.png" alt="Foto" class="rounded-full border-2 border-gray-300 mx-auto mb-4">
+                <h2 class="text-lg font-semibold text-center">Neymarshiño</h2>
+                <p class="text-gray-600 text-center">Delantero</p>
+                <p class="text-gray-700 text-center">Email: correo@ejemplo.com</p>
+                <p class="text-gray-700 text-center">Teléfono: (123) 456-7890</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+</Layout>
