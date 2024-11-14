@@ -5,8 +5,104 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Welcome to Astro.">
 	<span class="font-myfont">Hola mundo</span>
 	<div class="text-red-500">Cruel</div>
-	<div class="h-[1200px]">
-		Texto largo con scroll
+	<div id="btn" class="bg-blue-200 p-3 inline-block shadow-lg rounded-lg cursor-pointer ">
+		Presioname!!
 	</div>
+
+	<div class="embla">
+		<div class="embla__viewport">
+			<div class="embla__container ">
+				<div class="embla__slide ">
+					<img class="max-h-96 m-auto" src="/img/cr7.jpg" alt="">
+				</div>
+			    <div class="embla__slide ">
+					<img class="max-h-96 m-auto" src="/img/messi.webp" alt="">
+				</div>
+			    <div class="embla__slide ">
+					<img class="max-h-96 m-auto" src="/img/neymar.jpg" alt="">
+				</div>
+			</div>
+		 	 
+		</div>
+		<div class="flex justify-center mt-5 ">
+			<button class="embla__prev bg-purple-400 text-3xl text-center pr-3  pl-3 font-semibold rounded-lg mr-3 ml-3 border-solid border-2 border-black">Prev</button>
+			<button class="embla__next bg-purple-400 text-3xl text-center pr-3 pl-3  font-semibold rounded-lg mr-3 ml-3  border-solid border-2 border-black">Next</button>
+		</div>
+		
+	</div>
+	
+	
 </Layout>
+
+<style>
+	.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+</style>
+
+<script>
+
+	import JSConfetti from 'js-confetti'
+	import EmblaCarousel from 'embla-carousel'
+
+	const jsConfetti = new JSConfetti();
+
+	const rootNode = document.querySelector('.embla')
+	const viewportNode = rootNode.querySelector('.embla__viewport')
+
+	const prevButtonNode = rootNode.querySelector('.embla__prev')
+	const nextButtonNode = rootNode.querySelector('.embla__next')
+
+	const emblaNode = document.querySelector('.embla');
+	const options = { loop: false }
+	const embla = EmblaCarousel(viewportNode,options) 
+
+	prevButtonNode.addEventListener('click', embla.scrollPrev, false)
+	nextButtonNode.addEventListener('click', embla.scrollNext, false)
+
+
+	const btn = document.getElementById("btn");
+	
+	
+
+	btn.addEventListener("click", function (e) {
+
+		const elm = e.target;
+
+		//e.target.classList.remove("bg-blue-200")
+		//e.target.classList.add("bg-red-500")
+		elm.classList.replace("bg-blue-200","bg-red-500");
+
+		elm.innerText = "Ouch!"
+
+		const myDiv = document.createElement("div");
+		myDiv.innerText = "Soy un div creado por js";
+		myDiv.classList.add("bg-green-500","w-36","text-white");
+
+		myDiv.addEventListener("click", (e) =>{
+			e.target.remove();
+			console.log("Harakiri",e.target);
+			
+		})
+
+		document.body.appendChild(myDiv)
+
+		//console.log("Aca estoy en la consola",e.target.id);
+
+		jsConfetti.addConfetti({
+			confettiNumber: 500,
+			emojis: ['🌸']
+		})
+	})
+
+	
+</script>
 
